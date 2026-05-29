@@ -238,7 +238,7 @@ async def stock(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = "📦 Stock actual\n\n"
 
     for product in PRODUCTS.values():
-        text += f"{product['name']} → {product['stock']}\n"
+        text += f"{product['name']} → {product['stock']} unidades\n"
 
     await update.message.reply_text(text)
 

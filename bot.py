@@ -105,7 +105,6 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
     elif query.data == "pagos":
-    elif query.data == "pagos":
     texto_pago = f"""
 💳 MÉTODOS DE PAGO
 

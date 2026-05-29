@@ -250,22 +250,22 @@ async def admin(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(text)
 
 
-def main()::
+def main():
     app = Application.builder().token(BOT_TOKEN).build()
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("admin", admin))
     app.add_handler(CommandHandler("stock", stock))
 
-    app.add_handler(CallbackQueryHandler(admin_buttons, pattern="^approve_"))
+    app.add_handler(CallbackQueryHandler(admin_buttons))
     app.add_handler(CallbackQueryHandler(buttons))
 
     app.add_handler(MessageHandler(filters.PHOTO, comprobante))
 
     print("🤖 Orgánico 11 activo...")
 
-app.run_polling()
+    app.run_polling()
 
 
 if __name__ == "__main__":
-main()
+    main()

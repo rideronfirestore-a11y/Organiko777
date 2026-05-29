@@ -1,4 +1,4 @@
-import asyncio
+noimport asyncio
 from telegram import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
@@ -225,9 +225,10 @@ Gracias por tu compra en Orgánico 11 🌿
         )
 
         await query.message.reply_text(
-            f"✅ Pedido aprobado.
-📦 Stock restante: {product['stock']}"
-        )
+    f"""✅ Pedido aprobado.
+
+📦 Stock restante: {product['stock']}"""
+)
 
 
 async def stock(update: Update, context: ContextTypes.DEFAULT_TYPE):

@@ -94,18 +94,18 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             if product["stock"] > 0:
                 keyboard.append([
                     InlineKeyboardButton(
-                        f"{product['name']} — ${product['price']:,}",
-                        callback_data=f"buy_{key}",
+                        f"{product['name']} - ${product['price']}",
+                        callback_data=f"buy_{key}"
                     )
                 ])
 
         await query.message.reply_text(
             "🌿 Catálogo disponible",
-            reply_markup=InlineKeyboardMarkup(keyboard),
+            reply_markup=InlineKeyboardMarkup(keyboard)
         )
 
-elif query.data == "pagos":
-    texto_pago = f"""
+    elif query.data == "pagos":
+        texto_pago = f"""
 💳 MÉTODOS DE PAGO
 
 💛 Nequi: {NEQUI}
@@ -115,12 +115,12 @@ elif query.data == "pagos":
 📸 Envía el comprobante para continuar.
 """
 
-    await query.message.reply_text(texto_pago)
+        await query.message.reply_text(texto_pago)
 
-elif query.data == "soporte":
-    await query.message.reply_text(
-        "📞 Soporte Orgánico 11 disponible."
-    )
+    elif query.data == "soporte":
+        await query.message.reply_text(
+            "📞 Soporte Orgánico 11 disponible."
+        )
 
     elif query.data.startswith("buy_"):
         product_key = query.data.replace("buy_", "")

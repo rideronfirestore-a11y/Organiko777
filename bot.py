@@ -108,9 +108,9 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     texto_pago = f"""
 💳 MÉTODOS DE PAGO
 
-💛 Nequi: {3223398570}
+💛 Nequi: {NEQUI}
 
-💳 Bre-B: {3223398570}
+💳 Bre-B: {BREB}
 
 📸 Envía el comprobante para continuar.
 """

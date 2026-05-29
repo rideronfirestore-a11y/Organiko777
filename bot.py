@@ -1,4 +1,4 @@
-nonoimport asyncio
+import asyncio
 from telegram import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,

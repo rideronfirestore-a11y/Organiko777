@@ -1,4 +1,4 @@
-noimport asyncio
+nonoimport asyncio
 from telegram import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
@@ -235,16 +235,12 @@ async def stock(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if update.effective_user.id != ADMIN_ID:
         return
 
-    text = "📦 Stock actual
-
-"
+    text = "📦 Stock actual\n\n"
 
     for product in PRODUCTS.values():
-        text += f"{product['name']} → {product['stock']} disponibles
-"
+        text += f"{product['name']} → {product['stock']}\n"
 
     await update.message.reply_text(text)
-
 
 async def admin(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if update.effective_user.id != ADMIN_ID:

@@ -1,4 +1,4 @@
-import asyncio
+unoimport asyncio
 from telegram import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
@@ -105,7 +105,8 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
     elif query.data == "pagos":
-        texto_pago = f"""
+    elif query.data == "pagos":
+    texto_pago = f"""
 💳 MÉTODOS DE PAGO
 
 💛 Nequi: {NEQUI}
@@ -114,12 +115,13 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 📸 Envía el comprobante para continuar.
 """
-        await query.message.reply_text(texto_pago)
+
+    await query.message.reply_text(texto_pago)
 
 elif query.data == "soporte":
-        await query.message.reply_text(
-            "📞 Soporte Orgánico 11 disponible."
-        )
+    await query.message.reply_text(
+        "📞 Soporte Orgánico 11 disponible."
+    )
 
     elif query.data.startswith("buy_"):
         product_key = query.data.replace("buy_", "")

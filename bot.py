@@ -105,7 +105,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
     elif query.data == "pagos":
-    texto_pago = f"""
+        texto_pago = f"""
 💳 MÉTODOS DE PAGO
 
 💛 Nequi: {NEQUI}
@@ -114,10 +114,9 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 📸 Envía el comprobante para continuar.
 """
+        await query.message.reply_text(texto_pago)
 
-    await query.message.reply_text(texto_pago)
-
-    elif query.data == "soporte":
+elif query.data == "soporte":
         await query.message.reply_text(
             "📞 Soporte Orgánico 11 disponible."
         )

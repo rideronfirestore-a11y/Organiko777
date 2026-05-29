@@ -239,7 +239,6 @@ async def stock(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     for product in PRODUCTS.values():
         text += f"{product['name']} → {product['stock']} unidades\n"
-
     await update.message.reply_text(text)
 
 async def admin(update: Update, context: ContextTypes.DEFAULT_TYPE):

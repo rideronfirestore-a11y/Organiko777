@@ -105,10 +105,17 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
     elif query.data == "pagos":
-        await query.message.reply_text(
-            f"💳 Nequi: {NEQUI}
-💳 Bre-B: {BREB}"
-        )
+    texto_pago = f"""
+💳 MÉTODOS DE PAGO
+
+💛 Nequi: {NEQUI}
+
+💳 Bre-B: {BREB}
+
+📸 Envía el comprobante para continuar.
+"""
+
+    await query.message.reply_text(texto_pago)
 
     elif query.data == "soporte":
         await query.message.reply_text(

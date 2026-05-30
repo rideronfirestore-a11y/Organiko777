@@ -1,4 +1,4 @@
-import os
+noimport os
 from telegram import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
@@ -256,16 +256,27 @@ def main():
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("admin", admin))
     app.add_handler(CommandHandler("stock", stock))
+app.add_handler(
+    CallbackQueryHandler(
+        admin_buttons,
+        pattern="^approve_"
+    )
+)
 
-    app.add_handler(CallbackQueryHandler(admin_buttons))
-    app.add_handler(CallbackQueryHandler(buttons))
-
+app.add_handler(
+    CallbackQueryHandler(buttons)
+)
     app.add_handler(MessageHandler(filters.PHOTO, comprobante))
 
     print("🤖 Orgánico 11 activo...")
 
-    app.run_polling()
+PORT = int(os.environ.get("PORT", 10000))
 
+app.run_webhook(
+    listen="0.0.0.0",
+    port=PORT,
+    webhook_url="https://organiko750.onrender.com"
+)
 
 if __name__ == "__main__":
     main()

@@ -1,4 +1,4 @@
-noimport os
+import os
 from telegram import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
